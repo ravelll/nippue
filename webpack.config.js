@@ -1,5 +1,7 @@
+const path = require('path')
+
 module.exports = {
-  entry: './main.js',
+  entry: './src/main.js',
   output: {
     filename: './dist/bundle.js'
   },
@@ -16,5 +18,14 @@ module.exports = {
         exclude: /node_modules/
       }
     ]
+  },
+  resolve: {
+    modules: [
+      path.resolve(__dirname, 'src'),
+      'node_modules'
+    ],
+    alias: {
+      '@': path.resolve(__dirname, 'src')
+    }
   }
 }
