@@ -9,6 +9,9 @@
       <input type="password" v-model="password">
     </div>
     <input type="button" value="submit" @click.prevent="login">
+    <div v-if="isLoggedIn">
+      <p>Now you logged in!</p>
+    </div>
   </div>
 </template>
 
@@ -22,7 +25,12 @@ export default {
   },
   methods: {
     login () {
-      console.log("do login process")
+      this.$store.dispatch('login')
+    }
+  },
+  computed: {
+    isLoggedIn () {
+      return this.$store.state.isLoggedIn
     }
   }
 }
