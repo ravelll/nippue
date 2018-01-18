@@ -14,9 +14,6 @@ export default new VueRouter({
     },
     {
       path: '/posts', component: PostList
-    },
-    {
-      path: '*', component: Hello
     }
   ]
 })
