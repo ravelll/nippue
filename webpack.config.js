@@ -1,4 +1,5 @@
 const path = require('path')
+const srcPath = path.resolve(__dirname, 'src')
 
 module.exports = {
   entry: './src/main.js',
@@ -21,11 +22,16 @@ module.exports = {
   },
   resolve: {
     modules: [
-      path.resolve(__dirname, 'src'),
+      srcPath,
       'node_modules'
     ],
     alias: {
-      '@': path.resolve(__dirname, 'src')
+      '@': srcPath
     }
+  },
+  devServer: {
+    contentBase: srcPath,
+    compress: true,
+    port: 8080
   }
 }
