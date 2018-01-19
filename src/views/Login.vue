@@ -30,7 +30,7 @@ export default {
 
       this.$store.dispatch('login', inputs)
         .then((loggedInUser) => {
-          this.$router.push(`/users/${loggedInUser.id}/posts`)
+          this.$router.push(`/user/${loggedInUser.id}/posts`)
         }).catch((errorMessage) => {
           this.errorMessage = errorMessage
         })

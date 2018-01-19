@@ -13,7 +13,7 @@ export default new VueRouter({
       path: '/', component: PostList
     },
     {
-      path: '/users/:id/posts', component: PostList
+      path: '/user/:id/posts', component: PostList
     },
     {
       path: '/login', component: Login
