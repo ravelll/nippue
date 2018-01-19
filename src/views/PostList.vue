@@ -25,7 +25,7 @@ export default {
       return this.$store.state.currentUser
     },
     posts () {
-      if (this.$route.path === '/posts') {
+      if (this.$route.path === '/') {
         return this.allPosts
       } else {
         return this.allPosts.filter(post => post.userid === this.currentUser.id)

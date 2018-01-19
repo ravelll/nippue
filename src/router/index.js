@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Hello from '@/views/Hello.vue'
 import PostList from '@/views/PostList.vue'
 import Login from '@/views/Login.vue'
 
@@ -11,10 +10,7 @@ export default new VueRouter({
   base: '/',
   routes: [
     {
-      path: '/', component: Hello
-    },
-    {
-      path: '/posts', component: PostList
+      path: '/', component: PostList
     },
     {
       path: '/users/:id/posts', component: PostList
