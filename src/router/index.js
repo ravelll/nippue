@@ -17,6 +17,9 @@ export default new VueRouter({
       path: '/posts', component: PostList
     },
     {
+      path: '/users/:id/posts', component: PostList
+    },
+    {
       path: '/login', component: Login
     }
   ]

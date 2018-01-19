@@ -9,32 +9,31 @@
 </template>
 
 <script>
+import posts from '../fixtures/posts.js'
+
 export default {
   data () {
     return {
-      'posts': [
-        {
-          id: 1,
-          date: '2018/01/01',
-          content: '新年明けましておめでとうございます'
-        },
-        {
-          id: 2,
-          date: '2018/01/02',
-          content: '宝徳稲荷大社に初詣に行ってきました'
-        },
-        {
-          id: 3,
-          date: '2018/01/03',
-          content: '東京 🚅  新潟'
-        }
-      ]
+      'allPosts': []
     }
   },
   computed: {
     isLoggedIn () {
       return this.$store.state.isLoggedIn
+    },
+    currentUser () {
+      return this.$store.state.currentUser
+    },
+    posts () {
+      if (this.$route.path === '/posts') {
+        return this.allPosts
+      } else {
+        return this.allPosts.filter(post => post.userid === this.currentUser.id)
+      }
     }
+  },
+  beforeMount () {
+    this.allPosts = posts
   }
 }
 </script>

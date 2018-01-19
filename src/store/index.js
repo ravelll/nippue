@@ -6,11 +6,13 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    isLoggedIn: false
+    isLoggedIn: false,
+    currentUser: {}
   },
   mutations: {
-    login (state) {
+    login (state, user) {
       state.isLoggedIn = true
+      state.currentUser = user
     }
   },
   actions: {
@@ -21,7 +23,7 @@ const store = new Vuex.Store({
         })
 
         if (matchedUser) {
-          commit('login')
+          commit('login', matchedUser)
           resolve(matchedUser)
         } else {
           reject('name or password is or both are invalid')
