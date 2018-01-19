@@ -15,14 +15,16 @@ const store = new Vuex.Store({
   },
   actions: {
     login ({ commit }, inputs) {
-      return new Promise(() => {
+      return new Promise((resolve, reject) => {
         const matchedUser = users.find((user) => {
           return inputs.name === user.name && inputs.password === user.password
         })
 
         if (matchedUser) {
           commit('login')
-          console.log(inputs.name + ' logged in')
+          resolve(matchedUser)
+        } else {
+          reject('name or password is or both are invalid')
         }
       })
     }

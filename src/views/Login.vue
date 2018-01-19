@@ -9,8 +9,8 @@
       <input type="password" v-model="password">
     </div>
     <input type="button" value="submit" @click.prevent="login">
-    <div v-if="isLoggedIn">
-      <p>Now you logged in!</p>
+    <div v-if="errorMessage">
+      <p>{{ errorMessage }}</p>
     </div>
   </div>
 </template>
@@ -20,17 +20,20 @@ export default {
   data () {
     return {
       userId: '',
-      password: ''
+      password: '',
+      errorMessage: ''
     }
   },
   methods: {
     login () {
-      this.$store.dispatch('login', { name: this.userId, password: this.password })
-    }
-  },
-  computed: {
-    isLoggedIn () {
-      return this.$store.state.isLoggedIn
+      const inputs = { name: this.userId, password: this.password }
+
+      this.$store.dispatch('login', inputs)
+        .then((loggedInUser) => {
+          this.$router.push('/posts')
+        }).catch((errorMessage) => {
+          this.errorMessage = errorMessage
+        })
     }
   }
 }

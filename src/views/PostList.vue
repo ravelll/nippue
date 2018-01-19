@@ -1,5 +1,6 @@
 <template>
   <div>
+    <input type="button" value="Add post" v-if="isLoggedIn">
     <div v-for="post in posts">
       <h4>{{ post.date }}</h4>
       <div>{{ post.content }}</div>
@@ -28,6 +29,11 @@ export default {
           content: '東京 🚅  新潟'
         }
       ]
+    }
+  },
+  computed: {
+    isLoggedIn () {
+      return this.$store.state.isLoggedIn
     }
   }
 }
