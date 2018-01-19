@@ -25,7 +25,7 @@ export default {
   },
   methods: {
     login () {
-      this.$store.dispatch('login')
+      this.$store.dispatch('login', { name: this.userId, password: this.password })
     }
   },
   computed: {
