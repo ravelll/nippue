@@ -25,7 +25,9 @@ export default {
       if (this.$route.path === '/') {
         return this.allPosts
       } else {
-        return this.allPosts.filter(post => post.userid === this.$route.params.id)
+        return this.allPosts.filter(
+          post => post.userid == Number(this.$route.params.id)
+        )
       }
     }
   },
