@@ -25,6 +25,21 @@ module.exports = {
           'css-loader',
           'sass-loader'
         ]
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
+      },
+      {
+        test: /\.(otf|eot|svg|ttf|woff|woff2)(\?.+)?$/,
+        use: [
+          {
+            loader: 'url-loader'
+          }
+        ]
       }
     ]
   },
