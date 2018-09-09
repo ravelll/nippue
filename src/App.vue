@@ -1,10 +1,17 @@
 <template>
   <div id="app">
-    <router-link to="/">Home</router-link>
-    <router-link to="/login">Login</router-link>
-    <router-view></router-view>
+    <header-menu/>
+    <router-view/>
   </div>
 </template>
+
+<script>
+import HeaderMenu from '@/components/HeaderMenu.vue'
+
+export default {
+  components: { HeaderMenu }
+}
+</script>
 
 <style lang="scss">
 *,
@@ -21,6 +28,7 @@ body {
   font-size: 1.4rem;
   font-weight: normal;
   font-family: 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'Yu Gothic', YuGothic, Verdana, Helvetica, 'ＭＳ Ｐゴシック', sans-serif;
+  margin: 0;
 }
 
 h1,
