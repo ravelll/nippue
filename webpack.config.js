@@ -1,7 +1,9 @@
 const path = require('path')
 const srcPath = path.resolve(__dirname, 'src')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
+  mode: 'development',
   entry: './src/main.js',
   output: {
     filename: './dist/bundle.js'
@@ -43,6 +45,9 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+    new VueLoaderPlugin()
+  ],
   resolve: {
     modules: [
       srcPath,
