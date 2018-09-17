@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "element-ui": "^2.4.6",
+    "element-ui": "^2.4.7",
     "path": "^0.12.7",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1",
