@@ -22,7 +22,7 @@
     "@babel/preset-env": "^7.0.0",
     "babel-loader": "^8.0.2",
     "css-loader": "*",
-    "node-sass": "^4.9.3",
+    "node-sass": "^4.9.4",
     "sass-loader": "*",
     "style-loader": "*",
     "url-loader": "*",
